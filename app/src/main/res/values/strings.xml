@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Жумуш Булагы</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="login">Войти</string>
+    <string name="no_account">Нет учетной записи?</string>
+    <string name="registration">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="last_name">Фамилия</string>
+    <string name="has_account">Есть учетная запись?</string>
+    <string name="invalid_credentials">Неправильный логин или пароль</string>
+    <string name="bad_email_format">Неверный формат email</string>
+    <string name="password_must_be_at_least_6_length">
+        Пароль должен содержать минимум 6 символов
+    </string>
+    <string name="live">
+        Прямой эфир
+    </string>
+    <string name="filter">
+        Умный фильтр
+    </string>
+
+    <string name="succesfull_login">Успешный вход</string>
+    <string name="succesfull_registration">Успешная регистрация</string>
+</resources>

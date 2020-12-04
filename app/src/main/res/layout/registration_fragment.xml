@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.announce.presenter.registration.viewmodel.RegistrationFragmentViewModel" />
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/reg_bg"
+            android:paddingLeft="@dimen/glutter"
+            android:paddingRight="@dimen/glutter">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_first_name"
+                style="@style/AnnounceApp.TextInputLayout.Authorization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                app:errorEnabled="true"
+                app:layout_constraintVertical_bias="0.7"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/txt_layout_last_name"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/AnnounceApp.TextInputEditText.Authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.state.user.firstName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_last_name"
+                android:layout_marginTop="@dimen/reg_margin"
+                style="@style/AnnounceApp.TextInputLayout.Authorization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name"
+                app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/txt_layout_email"
+                app:layout_constraintTop_toBottomOf="@+id/txt_layout_first_name"
+                tools:layout_editor_absoluteX="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/AnnounceApp.TextInputEditText.Authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.state.user.lastName}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_email"
+                android:layout_marginTop="@dimen/reg_margin"
+                style="@style/AnnounceApp.TextInputLayout.Authorization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/txt_layout_password"
+                app:layout_constraintTop_toBottomOf="@+id/txt_layout_last_name"
+                tools:layout_editor_absoluteX="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/AnnounceApp.TextInputEditText.Authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewModel.state.user.email}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_layout_password"
+                android:layout_marginTop="@dimen/reg_margin"
+                style="@style/AnnounceApp.TextInputLayout.Authorization"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                app:errorEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/btn_registrate"
+                app:layout_constraintTop_toBottomOf="@+id/txt_layout_email"
+                tools:layout_editor_absoluteX="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/AnnounceApp.TextInputEditText.Authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:text="@={viewModel.state.user.password}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_registrate"
+                android:layout_marginTop="@dimen/reg_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="?colorAccent"
+                android:text="@string/registration"
+                android:onClick="@{() -> viewModel.register()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_layout_password" />
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/btn_registrate"
+                app:layout_constraintLeft_toLeftOf="@id/btn_registrate"
+                app:layout_constraintRight_toRightOf="@id/btn_registrate"/>
+
+            <TextView
+                android:id="@+id/tv_has_account"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/has_account"
+                app:layout_constraintBottom_toTopOf="@+id/btn_login"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_registrate"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:layout_editor_absoluteX="159dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/reg_margin"
+                android:textColor="?colorAccent"
+                android:text="@string/login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_has_account"
+                tools:layout_editor_absoluteX="203dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
