@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.10'
 }
 
 android {
@@ -26,6 +27,8 @@ android {
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled true
+
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -34,6 +37,7 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
 }
 
@@ -41,11 +45,16 @@ dependencies {
 
     def nav_version = "2.3.2"
 
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.1'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    //Kotlinx Serialization Json
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
 
     // Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -60,6 +69,9 @@ dependencies {
     //Firestore
     implementation 'com.google.firebase:firebase-firestore-ktx:22.0.0'
 
+    //Apache Commons Net Library
+    implementation 'commons-net:commons-net:3.6'
+
     //OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
 
@@ -70,6 +82,30 @@ dependencies {
     implementation "com.google.dagger:dagger:2.30.1"
     kapt "com.google.dagger:dagger-compiler:2.30.1"
 
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Braintree dependencies
+    implementation 'com.braintreepayments.api:braintree:2.22.0'
+    implementation 'com.braintreepayments.api:google-payment:2.0.1'
+
+    // Google dependencies
+    implementation 'com.google.android.gms:play-services-wallet:18.1.2'
+
+    def work_version = "2.4.0"
+
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    def room_version = "2.2.5"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

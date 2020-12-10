@@ -1,8 +1,8 @@
 package com.announce.framework.data
 
-import com.announce.data.GreenApiConfigSource
-import com.announce.domain.GreenApiConfig
-import com.announce.utils.onIo
+import com.announce.common.data.GreenApiConfigSource
+import com.announce.common.domain.GreenApiConfig
+import com.announce.framework.utils.onIo
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase

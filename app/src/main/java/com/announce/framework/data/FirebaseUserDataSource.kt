@@ -1,20 +1,14 @@
 package com.announce.framework.data
 
-import androidx.lifecycle.MutableLiveData
-import com.announce.utils.onIo
-import com.announce.data.AuthState
-import com.announce.data.UserDataSource
-import com.announce.domain.User
-import com.google.firebase.FirebaseApp
+import com.announce.framework.utils.onIo
+import com.announce.common.data.AuthState
+import com.announce.common.data.UserDataSource
+import com.announce.common.domain.User
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
-import java.lang.Exception
 import java.lang.IllegalStateException
 import javax.inject.Inject
 

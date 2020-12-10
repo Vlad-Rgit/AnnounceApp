@@ -10,8 +10,14 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Customize your theme here. -->
         <item name="colorSurface">@color/colorPrimaryLight</item>
+        <item name="popupMenuStyle">@style/AnnounceApp.PopupMenuStyle</item>
+        <item name="android:popupMenuStyle">@style/AnnounceApp.PopupMenuStyle</item>
     </style>
 
+    <style name="AnnounceApp.PopupMenuStyle"
+        parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/white</item>
+    </style>
 
     <style name="Theme.SplashActivity" parent="Theme.AnnounceApp">
         <item name="android:windowBackground">@drawable/splash_bg</item>

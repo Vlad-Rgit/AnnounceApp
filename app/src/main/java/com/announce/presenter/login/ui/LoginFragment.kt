@@ -32,6 +32,8 @@ class LoginFragment: Fragment() {
         viewModel = ViewModelProvider(this,
                 ViewModelProvider.AndroidViewModelFactory(requireActivity().application))
             .get(LoginFragmentViewModel::class.java)
+
+
     }
 
 

@@ -5,11 +5,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.announce.AnnounceApp
-import com.announce.utils.emailMatches
-import com.announce.utils.passwordMatches
-import com.announce.data.UserDataSource
-import com.announce.domain.User
+import com.announce.framework.AnnounceApp
+import com.announce.framework.utils.emailMatches
+import com.announce.framework.utils.passwordMatches
+import com.announce.common.data.UserDataSource
+import com.announce.common.domain.User
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject

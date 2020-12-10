@@ -1,6 +1,6 @@
 package com.announce.presenter.registration.viewmodel
 
-import com.announce.domain.User
+import com.announce.common.domain.User
 
 
 sealed class State(val user: User)

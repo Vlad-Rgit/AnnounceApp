@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cost_30_min">1.9</string>
+    <string name="cost_1_hour">2.9</string>
+    <string name="cost_3_hour">4.9</string>
+</resources>

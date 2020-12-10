@@ -17,9 +17,40 @@
         Прямой эфир
     </string>
     <string name="filter">
-        Умный фильтр
+        Фильтр
     </string>
 
     <string name="succesfull_login">Успешный вход</string>
     <string name="succesfull_registration">Успешная регистрация</string>
+    <string name="announce_image">Изображение объявления</string>
+    <string name="to_sort_messages_enter_text">Чтобы сортировать сообщения введите тескт</string>
+    <string name="photo">Фото</string>
+    <string name="audio">Аудио</string>
+    <string name="key_word">Ключевое слово</string>
+    <string name="btn_close">Закрыть</string>
+    <string name="pay">Оплата</string>
+    <string name="announcment">Объявления</string>
+    <string name="pay30min">1.9 рублей за 30 минут</string>
+    <string name="pay1hour">2.9 рублей за 1 час</string>
+    <string name="pay3hour">4.9 рублей за 3 часа</string>
+    <string name="to_remove_red_stars">для того чтобы убрать красные звезды</string>
+    <string name="buy_1_hour">Купить 1 час</string>
+    <string name="buy_30_min">Купить 30 минут</string>
+    <string name="but_3_hours">Купить 3 часа</string>
+    <string name="scroll_down">Прокрутить вниз</string>
+    <string name="copy_text">Скопировать текст</string>
+    <string name="call">Позвонить</string>
+    <string name="download_image">Скачать изображение</string>
+    <string name="download_started">Загрузка началась</string>
+    <string name="download_error">Ошибка загрузки</string>
+    <string name="image_saved_in_gallery">
+        Фото сохранено в галерее
+    </string>
+    <string name="succesful_payment">
+        Успешная оплата
+    </string>
+    <string name="canceled_payment">
+        Отмена оплаты
+    </string>
+    <string name="add_announce">Add announce</string>
 </resources>

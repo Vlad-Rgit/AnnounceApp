@@ -1,15 +1,9 @@
 package com.announce.presenter.login.viewmodel
 
 import android.app.Application
-import android.content.Context
-import android.util.Patterns
 import androidx.lifecycle.*
-import com.announce.AnnounceApp
-import com.announce.R
-import com.announce.utils.emailMatches
-import com.announce.data.UserDataSource
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthInvalidUserException
+import com.announce.framework.AnnounceApp
+import com.announce.common.data.UserDataSource
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
@@ -29,6 +23,10 @@ class LoginFragmentViewModel(application: Application)
 
     init {
         AnnounceApp.dataComponent.inject(this)
+        val user = state.value!!.user
+        user.email = "vlyachmenev16@gmail.com"
+        user.password = "123456"
+        login()
     }
 
     fun login() {
